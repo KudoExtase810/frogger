@@ -75,7 +75,6 @@ function Register() {
             <main className="flex flex-col gap-3 z-[2] mb-6">
                 <form
                     onSubmit={handleSubmit}
-                    action="localhost:3001"
                     className="text-gray-700 flex flex-col gap-5 items-center bg-slate-100 py-10 px-7 rounded-md w-[460px] max-w-[97vw]"
                 >
                     <div className="relative w-[90%] bp4:w-full">
