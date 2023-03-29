@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://frogger.up.railway.app:5033";
+const BASE_URL = "https://frogger.up.railway.app";
 const token = `Bearer ${
     localStorage.getItem("JWToken") || sessionStorage.getItem("JWToken")
 }`;
