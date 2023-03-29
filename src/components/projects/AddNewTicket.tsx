@@ -178,7 +178,7 @@ function AddNewTicket({
                                 name="time"
                                 id="time"
                                 className="rounded-md p-3 border border-zinc-400 bp4:w-40"
-                                min={-0.5}
+                           
                                 max={10000}
                                 onChange={(e) =>
                                     setTimeEstimate(e.target.value as any)
