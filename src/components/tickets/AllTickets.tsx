@@ -87,7 +87,7 @@ function AllTickets({
     const [parent, enableAnimations] = useAutoAnimate();
     if (!allTickets)
         return (
-            <div className="text-left mt-32 w-[93vw] bg-white rounded-lg mx-auto mb-12 dark:bg-zinc-800 dark:text-slate-50 bp0:w-[92vw] bp1:w-[90vw]">
+            <div className="text-left mt-8 w-[93vw] bg-white rounded-lg mx-auto mb-12 dark:bg-zinc-800 dark:text-slate-50 bp0:w-[92vw] bp1:w-[90vw]">
                 <h2 className="text-lg font-bold p-4 border-b border-zinc-400">
                     Tickets
                 </h2>
@@ -105,7 +105,7 @@ function AllTickets({
 
     if (allTickets?.length === 0)
         return (
-            <div className="text-left mt-32 w-[93vw] bg-white rounded-lg mx-auto mb-12 dark:bg-zinc-800 dark:text-slate-50 bp0:w-[92vw] bp1:w-[90vw]">
+            <div className="text-left mt-8 w-[93vw] bg-white rounded-lg mx-auto mb-12 dark:bg-zinc-800 dark:text-slate-50 bp0:w-[92vw] bp1:w-[90vw]">
                 <div className="flex justify-between items-center p-4 relative ">
                     <h2 className="text-lg font-bold">Tickets</h2>
 
@@ -131,7 +131,7 @@ function AllTickets({
         );
 
     return (
-        <div className="text-left mt-32 w-[93vw] bg-white rounded-lg mx-auto mb-12 dark:bg-zinc-800 dark:text-zinc-50 bp0:w-[92vw] bp1:w-[90vw] bp3:w-[97vw] bp35:overflow-x-auto">
+        <div className="text-left mt-8 w-[93vw] bg-white rounded-lg mx-auto mb-12 dark:bg-zinc-800 dark:text-zinc-50 bp0:w-[92vw] bp1:w-[90vw] bp3:w-[97vw] bp35:overflow-x-auto">
             <div className="flex justify-between items-center p-4 relative ">
                 <h2 className="text-lg font-bold">Tickets</h2>
 
