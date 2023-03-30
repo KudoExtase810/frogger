@@ -1,14 +1,25 @@
 import axios from "axios";
 
 const BASE_URL = "https://frogger.up.railway.app";
-const token = `Bearer ${
-    localStorage.getItem("JWToken") || sessionStorage.getItem("JWToken")
-}`;
+const getToken = () => {
+    let token = `Bearer ${
+        localStorage.getItem("JWToken") || sessionStorage.getItem("JWToken")
+    }`;
+    if (token === "Bearer null") {
+        setTimeout(() => {
+            token = `Bearer ${
+                localStorage.getItem("JWToken") ||
+                sessionStorage.getItem("JWToken")
+            }`;
+        }, 1);
+    }
+    return token;
+};
 
 // -- READ -- //
 async function getAllUsers() {
     const URL = BASE_URL + "/users/all";
-    const res = await axios.get(URL, { headers: { Authorization: token } });
+    const res = await axios.get(URL, { headers: { Authorization: getToken() } });
     return await res.data;
 }
 // -- UPDATE -- //
@@ -21,7 +32,7 @@ async function editUserInfo(
         URL,
         { username: newInfo.username, email: newInfo.email },
         {
-            headers: { Authorization: token },
+            headers: { Authorization: getToken() },
         }
     );
     return res;
@@ -33,7 +44,7 @@ async function assignRole(id: user["_id"], newRole: user["role"]) {
         URL,
         { newRole },
         {
-            headers: { Authorization: token },
+            headers: { Authorization: getToken() },
         }
     );
     return res;
@@ -43,7 +54,7 @@ async function assignRole(id: user["_id"], newRole: user["role"]) {
 async function deleteUser(id: user["_id"]) {
     const URL = `${BASE_URL}/users/${id}`;
     const res = await axios.delete(URL, {
-        headers: { Authorization: token },
+        headers: { Authorization: getToken() },
     });
     return res;
 }
