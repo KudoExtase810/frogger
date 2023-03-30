@@ -247,7 +247,7 @@ function AllTickets({
                                             e.stopPropagation();
                                             if (
                                                 [
-                                                    "Frogsger",
+                                                    "Frogger",
                                                     "Masenko",
                                                 ].includes(ticket.projectName)
                                             ) {
