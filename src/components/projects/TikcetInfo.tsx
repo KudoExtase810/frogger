@@ -196,7 +196,7 @@ function TikcetInfo({
                             >
                                 <div className="flex justify-between items-center mb-4">
                                     <div>
-                                        <b>{comment.poster}</b>
+                                        <b className="mr-3">{comment.poster}</b>
                                         <span className="text-sm">
                                             {comment.createdAt}
                                         </span>
