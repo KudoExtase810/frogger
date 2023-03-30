@@ -34,7 +34,7 @@ function AddNewTicket({
     const [status, setStatus] = useState<ticket["status"]>("New");
     const [priority, setPriority] = useState<ticket["priority"]>("Medium");
     const [type, setType] = useState<ticket["type"]>("Bug");
-    const [timeEstimate, setTimeEstimate] = useState(3);
+    const [timeEstimate, setTimeEstimate] = useState(3.0)
     const [assignedDevs, setAssignedDevs] = useState<ticket["assignedDevs"]>(
         []
     );
@@ -178,7 +178,7 @@ function AddNewTicket({
                                 name="time"
                                 id="time"
                                 className="rounded-md p-3 border border-zinc-400 bp4:w-40"
-                           
+                            min={0}
                                 max={10000}
                                 onChange={(e) =>
                                     setTimeEstimate(e.target.value as any)
