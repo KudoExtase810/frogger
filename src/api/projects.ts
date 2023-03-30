@@ -1,15 +1,26 @@
 import axios from "axios";
 
 const BASE_URL = "https://frogger.up.railway.app";
-const token = `Bearer ${
-    localStorage.getItem("JWToken") || sessionStorage.getItem("JWToken")
-}`;
+const getToken = () => {
+    let token = `Bearer ${
+        localStorage.getItem("JWToken") || sessionStorage.getItem("JWToken")
+    }`;
+    if (token === "Bearer null") {
+        setTimeout(() => {
+            token = `Bearer ${
+                localStorage.getItem("JWToken") ||
+                sessionStorage.getItem("JWToken")
+            }`;
+        }, 1);
+    }
+    return token;
+};
 
 // -- CREATE -- //
 async function addProject(projectInfo: project) {
     const URL = BASE_URL + "/projects/add";
     const res = await axios.post(URL, projectInfo, {
-        headers: { Authorization: token },
+        headers: { Authorization: getToken() },
     });
     return res;
 }
@@ -18,7 +29,7 @@ async function addProject(projectInfo: project) {
 async function getAllProjects() {
     const URL = BASE_URL + "/projects/all";
 
-    const res = await axios.get(URL, { headers: { Authorization: token } });
+    const res = await axios.get(URL, { headers: { Authorization: getToken() } });
     const projects = await res?.data;
 
     return projects;
@@ -27,7 +38,7 @@ async function getAllProjects() {
 async function getProject(name: string) {
     const URL = `${BASE_URL}/projects/${name}`;
     const res = await axios.get(URL, {
-        headers: { Authorization: token },
+        headers: { Authorization: getToken() },
     });
 
     return res;
@@ -40,7 +51,7 @@ async function addProjectMember(projectName: string, members: user[]) {
         URL,
         { members },
         {
-            headers: { Authorization: token },
+            headers: { Authorization: getToken() },
         }
     );
     return res;
@@ -49,7 +60,7 @@ async function addProjectMember(projectName: string, members: user[]) {
 // -- DELETE -- //
 async function deleteProject(projectId: string) {
     const URL = `${BASE_URL}/projects/${projectId}`;
-    const res = await axios.delete(URL, { headers: { Authorization: token } });
+    const res = await axios.delete(URL, { headers: { Authorization: getToken() } });
     return res;
 }
 
@@ -58,7 +69,7 @@ async function deleteTeamMember(projectName: string, member: string) {
     const res = await axios.patch(
         URL,
         { member },
-        { headers: { Authorization: token } }
+        { headers: { Authorization: getToken() } }
     );
     return res;
 }
