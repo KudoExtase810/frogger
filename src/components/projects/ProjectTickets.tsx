@@ -86,7 +86,7 @@ function ProjectTickets({
 
     if (!projectTickets)
         return (
-            <div className="rounded-lg bg-white mt-8 mb-12 text-left w-[60%] bp1:mx-auto bp0:w-[52%] bp1:mt-0 bp1:w-full dark:bg-zinc-800 dark:text-slate-50">
+            <div className="rounded-lg bg-white mt-8 text-left w-[60%] bp1:mx-auto bp0:w-[52%] bp1:mt-0 bp1:w-full dark:bg-zinc-800 dark:text-slate-50">
                 <h2 className="text-lg font-bold p-4 border-b border-zinc-400">
                     Tickets
                 </h2>
@@ -103,7 +103,7 @@ function ProjectTickets({
 
     if (projectTickets.length === 0) {
         return (
-            <div className="rounded-lg bg-white mt-8 mb-12 text-left w-[60%] bp1:mx-auto bp0:w-[52%] bp1:mt-0 bp1:w-full dark:bg-zinc-800 dark:text-slate-50">
+            <div className="rounded-lg bg-white mt-8 text-left w-[60%] bp1:mx-auto bp0:w-[52%] bp1:mt-0 bp1:w-full dark:bg-zinc-800 dark:text-slate-50">
                 <div className="flex justify-between items-center p-4">
                     <h2 className="text-lg font-bold">Tickets</h2>
                     <button
@@ -125,7 +125,7 @@ function ProjectTickets({
     }
 
     return (
-        <div className="text-left mt-8 bg-white rounded-lg mb-12 w-[60%] bp1:mx-auto c-scroll max-h-[348.5px] dark:bg-zinc-800 dark:text-zinc-50 bp0:w-[52%] bp1:mt-0 bp1:w-full overflow-auto">
+        <div className="text-left mt-8 bg-white rounded-lg w-[60%] bp1:mx-auto c-scroll max-h-[348.5px] dark:bg-zinc-800 dark:text-zinc-50 bp0:w-[52%] bp1:mt-0 bp1:w-full overflow-auto">
             <div className="flex justify-between items-center p-4">
                 <h2 className="text-lg font-bold">Tickets</h2>
                 <button
