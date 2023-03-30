@@ -69,13 +69,13 @@ function TikcetInfo({
 
     if (!selectedTicket)
         return (
-            <div className="mx-auto w-[93vw] bp1:w-[91.5vw] bp15:w-[90.4vw] bp2:w-[89.4vw] bp3:w-[97vw] bg-white rounded-lg p-4 dark:bg-zinc-800 dark:text-slate-50">
+            <div className="mx-auto mt-12 w-[93vw] bp1:w-[91.5vw] bp15:w-[90.4vw] bp2:w-[89.4vw] bp3:w-[97vw] bg-white rounded-lg p-4 dark:bg-zinc-800 dark:text-slate-50">
                 No ticket selected.
             </div>
         );
 
     return (
-        <div className="mx-auto w-[93vw] bg-white rounded-lg p-4 dark:bg-zinc-800 dark:text-slate-50 bp1:w-[91.5vw] bp15:w-[90.4vw] bp2:w-[89.4vw] bp3:w-[97vw]">
+        <div className="mx-auto mt-12 w-[93vw] bg-white rounded-lg p-4 dark:bg-zinc-800 dark:text-slate-50 bp1:w-[91.5vw] bp15:w-[90.4vw] bp2:w-[89.4vw] bp3:w-[97vw]">
             <h2 className="p-4 text-lg font-bold border-b border-zinc-400 mb-7">
                 Selected Ticket Info
             </h2>
