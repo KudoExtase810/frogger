@@ -41,7 +41,7 @@ function Organization({
 
     if (!filteredUsers)
         return (
-            <div className="rounded-lg bg-white mt-32 text-left w-4/5 mx-auto dark:bg-zinc-800 dark:text-slate-50 bp1:w-[92%]">
+            <div className="rounded-lg bg-white mt-8 text-left w-4/5 mx-auto dark:bg-zinc-800 dark:text-slate-50 bp1:w-[92%]">
                 <h2 className="text-lg font-bold p-4 border-b border-zinc-400">
                     Organization
                 </h2>
