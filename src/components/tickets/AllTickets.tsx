@@ -268,7 +268,7 @@ function AllTickets({
                                         onClick={(e) => {
                                             e.stopPropagation();
                                             if (
-                                                ["Frogger", "Masenko"].includes(
+                                                ["Frogger", "PastryPal"].includes(
                                                     ticket.projectName
                                                 )
                                             ) {
