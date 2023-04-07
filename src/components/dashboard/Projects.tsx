@@ -186,7 +186,7 @@ function Projects({
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         if (
-                                            ["Frogger", "Masenko"].includes(
+                                            ["Frogger", "PastryPal"].includes(
                                                 project.name
                                             )
                                         ) {
