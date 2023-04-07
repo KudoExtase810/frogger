@@ -248,7 +248,7 @@ function AllTickets({
                                             if (
                                                 [
                                                     "Frogger",
-                                                    "Masenko",
+                                                    "PastryPal",
                                                 ].includes(ticket.projectName)
                                             ) {
                                                 return toast.error(
