@@ -30,8 +30,8 @@ function App() {
             <Toaster />
             <Routes>
                 <Route path="/" element={<Navigate to="/dashboard" />} />
-                <Route path="/register" element={!token ? <Register /> : <Navigate to="/dashboard" />} />
-                <Route path="/login" element={!token ? <Login setToken={setToken} /> : <Navigate to="/dashboard" />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login setToken={setToken} />} />
                 <Route
                     path="/dashboard"
                     element={token ? <Dashboard /> : <Navigate to="/login" />}
