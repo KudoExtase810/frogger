@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
+const BASE_URL = "https://frogger-api.onrender.com";
 const getToken = () => {
     let token = `Bearer ${
         localStorage.getItem("JWToken") || sessionStorage.getItem("JWToken")
