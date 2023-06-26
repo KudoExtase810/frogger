@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "https://frogger-api.onrender.com";
+const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 const getToken = () => {
     let token = `Bearer ${
         localStorage.getItem("JWToken") || sessionStorage.getItem("JWToken")
@@ -28,7 +28,9 @@ async function addTicket(ticketInfo: ticket) {
 // -- READ -- //
 async function getAllTickets() {
     const URL = BASE_URL + "/tickets/all";
-    const res = await axios.get(URL, { headers: { Authorization: getToken() } });
+    const res = await axios.get(URL, {
+        headers: { Authorization: getToken() },
+    });
     const tickets = await res.data;
 
     return tickets;
@@ -36,7 +38,9 @@ async function getAllTickets() {
 
 async function getTicketById(id: string) {
     const URL = `${BASE_URL}/tickets/${id}`;
-    const res = await axios.get(URL, { headers: { Authorization: getToken() } });
+    const res = await axios.get(URL, {
+        headers: { Authorization: getToken() },
+    });
     const ticket = await res.data;
 
     return ticket;
@@ -79,7 +83,9 @@ async function editTicketStatus(ticketId: string, newStatus: ticket["status"]) {
 // -- DELETE -- //
 async function deleteTicket(ticketId: string) {
     const URL = `${BASE_URL}/tickets/${ticketId}`;
-    const res = await axios.delete(URL, { headers: { Authorization: getToken() } });
+    const res = await axios.delete(URL, {
+        headers: { Authorization: getToken() },
+    });
     return res;
 }
 

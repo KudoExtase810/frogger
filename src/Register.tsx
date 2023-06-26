@@ -19,7 +19,7 @@ function Register() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         try {
-            const URL = "https://frogger-api.onrender.com/auth/register";
+            const URL = `${import.meta.env.VITE_REACT_BASE_URL}/auth/register`;
             e.preventDefault();
             const res = await axios.post(URL, {
                 username,

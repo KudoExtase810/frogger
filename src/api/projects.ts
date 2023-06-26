@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://frogger-api.onrender.com";
+const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 const getToken = () => {
     let token = `Bearer ${
         localStorage.getItem("JWToken") || sessionStorage.getItem("JWToken")
@@ -29,7 +29,9 @@ async function addProject(projectInfo: project) {
 async function getAllProjects() {
     const URL = BASE_URL + "/projects/all";
 
-    const res = await axios.get(URL, { headers: { Authorization: getToken() } });
+    const res = await axios.get(URL, {
+        headers: { Authorization: getToken() },
+    });
     const projects = await res?.data;
 
     return projects;
@@ -60,7 +62,9 @@ async function addProjectMember(projectName: string, members: user[]) {
 // -- DELETE -- //
 async function deleteProject(projectId: string) {
     const URL = `${BASE_URL}/projects/${projectId}`;
-    const res = await axios.delete(URL, { headers: { Authorization: getToken() } });
+    const res = await axios.delete(URL, {
+        headers: { Authorization: getToken() },
+    });
     return res;
 }
 

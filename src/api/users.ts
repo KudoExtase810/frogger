@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://frogger-api.onrender.com";
+const BASE_URL = import.meta.env.VITE_REACT_BASE_URL;
 const getToken = () => {
     let token = `Bearer ${
         localStorage.getItem("JWToken") || sessionStorage.getItem("JWToken")
@@ -19,7 +19,9 @@ const getToken = () => {
 // -- READ -- //
 async function getAllUsers() {
     const URL = BASE_URL + "/users/all";
-    const res = await axios.get(URL, { headers: { Authorization: getToken() } });
+    const res = await axios.get(URL, {
+        headers: { Authorization: getToken() },
+    });
     return await res.data;
 }
 // -- UPDATE -- //
