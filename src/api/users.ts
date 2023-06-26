@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://frogger-api.onrender.com";
+const BASE_URL = "https://frogger.up.railway.app";
 const getToken = () => {
     let token = `Bearer ${
         localStorage.getItem("JWToken") || sessionStorage.getItem("JWToken")

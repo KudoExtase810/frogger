@@ -20,7 +20,7 @@ function Login({ setToken }: props) {
     const navigate = useNavigate();
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const URL = `${"https://frogger-api.onrender.com"}/auth/login`;
+        const URL = `${"https://frogger.up.railway.app"}/auth/login`;
         try {
             const res = await axios.post(URL, {
                 email: email.toLowerCase(),
